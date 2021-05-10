@@ -34,10 +34,8 @@ app.post("/create/user", (req, res) => {
    
     const newUser = { name: req.body.name, age: req.body.age };
     users.push(newUser);
-   
     res.status(201);
     res.json(newUser);
-  
   });
 
   app.get("/fname/first-user",(req,res)=>{
