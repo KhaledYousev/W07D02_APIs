@@ -40,6 +40,14 @@ app.post("/create/user", (req, res) => {
   
   });
 
+  app.get("/fname/first-user",(req,res)=>{
+      res.status (201);
+      res.json(users[0]);
+  })
+  app.get("/",(req,res)=>{
+      res.status(201);
+      res.json("Hello World")
+  })
 app.listen(port, () => {
-    
+    console.log(`server is running on http://localhost:${port}`)
   });
