@@ -20,15 +20,15 @@ app.get("/user/:name",(req,res)=>{
     const found = users.find((element) => {
         return element.name ===user;
     });
+    if (found) {
+        res.status(200);
+        res.json(found);
+      } else {
+        res.status(404);
+        res.json("User not found");
+      };
 })
-if (found) {
-    res.status(200);
-    res.json(found);
-  } else {
-    res.status(404);
-    res.json("User not found");
-  }
-});
+
 
 app.post("/create/user", (req, res) => {
    
