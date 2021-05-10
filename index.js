@@ -22,7 +22,23 @@ app.get("/user/:name",(req,res)=>{
     });
 })
 if (found) {
+    res.status(200);
+    res.json(found);
+  } else {
+    res.status(404);
+    res.json("User not found");
+  }
+});
 
+app.post("/create/user", (req, res) => {
+   
+    const newUser = { name: req.body.name, age: req.body.age };
+    users.push(newUser);
+   
+    res.status(201);
+    res.json(newUser);
+  
+  });
 
 app.listen(port, () => {
     
